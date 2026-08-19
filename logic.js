@@ -1,6 +1,7 @@
 function sumar(a, b) { return a + b; }
 function restar(a, b) { return a - b; }
 function multiplicar(a, b) { return a * b; }
+function potencia(a) {return a **2;}
 
 function dividir(a, b) {
   if (b === 0) throw new Error("No se puede dividir entre cero");
@@ -8,11 +9,11 @@ function dividir(a, b) {
 }
 
 function calcularOperacion(a, b, operacion) {
-  const operaciones = { sumar, restar, multiplicar, dividir };
+  const operaciones = { sumar, restar, multiplicar, dividir, potencia };
   if (!operaciones[operacion]) throw new Error("Operación no válida");
   return operaciones[operacion](a, b);
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { sumar, restar, multiplicar, dividir, calcularOperacion };
+  module.exports = { sumar, restar, multiplicar, dividir, potencia, calcularOperacion };
 }
